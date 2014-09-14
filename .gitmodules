@@ -9,19 +9,19 @@
 	url = git://busybox.net/busybox
 [submodule "deps/make"]
 	path = deps/make
-	url = git://github.com/mwcampbell/make
+	url = git://github.com/nischu7/make
 [submodule "deps/m4"]
 	path = deps/m4
-	url = git://github.com/mwcampbell/m4
+	url = git://github.com/nischu7/m4
 [submodule "deps/flex"]
 	path = deps/flex
-	url = git://github.com/mwcampbell/flex
+	url = git://github.com/nischu7/flex
 [submodule "deps/gmp"]
 	path = deps/gmp
-	url = git://github.com/mwcampbell/gmp
+	url = git://github.com/nischu7/gmp
 [submodule "deps/mpc"]
 	path = deps/mpc
-	url = git://github.com/mwcampbell/mpc
+	url = git://github.com/nischu7/mpc
 [submodule "deps/mpfr"]
 	path = deps/mpfr
 	url = git://github.com/mwcampbell/mpfr
