@@ -1,7 +1,8 @@
 cp -a $DEPS/perl .
 cd perl
 
-patch -Np1 -i ${PATCHDIR}/perl/perl-5.18.2-libc-1.patch
+#patch -Np1 -i ${PATCHDIR}/perl/perl-5.18.2-libc-1.patch
+patch -Np1 -i ${PATCHDIR}/perl/perl-5.20-libc-1.patch
 
 ./Configure -d -e -s -Dprefix=/tools
 make $jobs

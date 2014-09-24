@@ -1,0 +1,30 @@
+--- perl_orig/hints/linux.sh	2014-09-23 17:47:47.370218185 +0200
++++ perl/hints/linux.sh	2014-09-23 17:49:24.562218185 +0200
+@@ -163,11 +163,11 @@
+ # we don't want its libraries. So we try to prefer the system gcc
+ # Still, as an escape hatch, allow Configure command line overrides to
+ # plibpth to bypass this check.
+-if [ -x /usr/bin/gcc ] ; then
+-    gcc=/usr/bin/gcc
+-else
++#if [ -x /usr/bin/gcc ] ; then
++#    gcc=/usr/bin/gcc
++#else
+     gcc=gcc
+-fi
++#fi
+ 
+ case "$plibpth" in
+ '') plibpth=`LANG=C LC_ALL=C $gcc $ccflags $ldflags -print-search-dirs | grep libraries |
+@@ -178,6 +178,11 @@
+     ;;
+ esac
+ 
++locincpth=""
++loclibpth=""
++glibpth="${prefix}/lib"
++usrinc="${prefix}/include"
++
+ case "$libc" in
+ '')
+ # If you have glibc, then report the version for ./myconfig bug reporting.
