@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-09-15 02:20:17.097384942 +0200
++++ Makefile.in	2014-09-15 02:20:32.173384942 +0200
+@@ -1442,7 +1442,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = . examples lib src doc checks tests
++SUBDIRS = . lib src checks tests
+ EXTRA_DIST = bootstrap c-boxes.el cfg.mk maint.mk \
+ 	.prev-version .version m4/gnulib-cache.m4
+ 
