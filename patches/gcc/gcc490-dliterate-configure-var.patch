@@ -1,0 +1,11 @@
+--- gcc_orig/gcc/configure
++++ gcc/gcc/configure
+@@ -27405,7 +27405,7 @@
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking dl_iterate_phdr in target C library" >&5
+ $as_echo_n "checking dl_iterate_phdr in target C library... " >&6; }
+-gcc_cv_target_dl_iterate_phdr=unknown
++gcc_cv_target_dl_iterate_phdr=yes
+ case "$target" in
+   # Restrict to Solaris 11+.  While most of the Solaris 11 linker changes
+   # were backported to Solaris 10 Update 10, dl_iterate_phdr only lives in

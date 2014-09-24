@@ -10,11 +10,17 @@ machine_type=$(gcc -dumpmachine)
 cp -a $DEPS/gcc .
 cd gcc
 
-patch -Np0 -i ${PATCHDIR}/gcc/gcc-nofixincludes
+#patch -Np0 -i ${PATCHDIR}/gcc/gcc-nofixincludes
+#patch -Np0 -i ${PATCHDIR}/gcc/gcc-libiberty
+#patch -Np1 -i ${PATCHDIR}/gcc/gcc473-dliterate-configure-var.patch
+#patch -Np1 -i ${PATCHDIR}/gcc/gcc482-unwind-dliterate.patch
+#patch -Np1 -i ${PATCHDIR}/gcc/gcc482-libssp-link.patch
+
+patch -Np0 -i ${PATCHDIR}/gcc/gcc490-nofixincludes.patch
 patch -Np0 -i ${PATCHDIR}/gcc/gcc-libiberty
-patch -Np1 -i ${PATCHDIR}/gcc/gcc473-dliterate-configure-var.patch
+patch -Np1 -i ${PATCHDIR}/gcc/gcc490-dliterate-configure-var.patch
 patch -Np1 -i ${PATCHDIR}/gcc/gcc482-unwind-dliterate.patch
-patch -Np1 -i ${PATCHDIR}/gcc/gcc482-libssp-link.patch
+patch -Np1 -i ${PATCHDIR}/gcc/gcc490-libssp-link.patch
 
 # x86
 for file in \
@@ -81,6 +87,8 @@ export gcc_cv_libc_provides_ssp=yes
  --disable-libquadmath \
  --disable-libsanitizer \
  --disable-install-libiberty \
+ --disable-libvtv \
+ --disable-libcilkrts \
  --with-mpfr-include=$(pwd)/../gcc/mpfr/src \
  --with-mpfr-lib=$(pwd)/mpfr/src/.libs
 

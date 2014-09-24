@@ -8,9 +8,13 @@
 cp -a $DEPS/gcc .
 cd gcc
 
-patch -Np0 -i ${PATCHDIR}/gcc/gcc-nofixincludes
-patch -Np1 -i ${PATCHDIR}/gcc/gcc473-dliterate-configure-var.patch
-patch -Np1 -i ${PATCHDIR}/gcc/gcc482-unwind-dliterate.patch
+#patch -Np0 -i ${PATCHDIR}/gcc/gcc-nofixincludes
+#patch -Np1 -i ${PATCHDIR}/gcc/gcc473-dliterate-configure-var.patch
+#patch -Np1 -i ${PATCHDIR}/gcc/gcc482-unwind-dliterate.patch
+
+patch -Np0 -i ${PATCHDIR}/gcc/gcc490-nofixincludes.patch
+patch -Np1 -i ${PATCHDIR}/gcc/gcc490-dliterate-configure-var.patch
+patch -Np1 -i ${PATCHDIR}/gcc/gcc490-unwind-dliterate.patch
 
 # x86
 for file in \
@@ -101,6 +105,8 @@ cd ../gcc-build
  --disable-libstdc++-v3 \
  --disable-libatomic \
  --disable-libsanitizer \
+ --disable-libvtv \
+ --disable-libcilkrts \
  --enable-languages=c,c++ \
  --without-ppl \
  --without-cloog
