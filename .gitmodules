@@ -39,4 +39,4 @@
 	url = git://github.com/mwcampbell/help2man
 [submodule "deps/texinfo"]
 	path = deps/texinfo
-	url = git://github.com/mwcampbell/texinfo
+	url = git://github.com/nischu7/texinfo
